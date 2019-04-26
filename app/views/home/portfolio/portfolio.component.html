@@ -1,0 +1,100 @@
+<section id="portfolio-section" class="portfolio home-section" [ngClass]="{'light-gray': backgroundGray}">
+  <div class="container">
+    <!-- <div class="section-header">
+      <h2>Our Works</h2>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat unde inventore molestias ab adipisci eius nisi placeat
+        at.
+      </p>
+    </div> -->
+
+    <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutWrap="wrap" fxLayoutGap="30px">
+      <div fxFlex="100">
+        <mat-card class="p-0 m-0">
+          <mat-card-content>
+            <h2><strong><a>Deploying AWS Lambdas from the .NET Core Command Line</a></strong></h2>
+            <mat-divider class="mb-1"></mat-divider>
+            <p>
+              4/20/2019
+            </p>
+            <p>
+              It is incredibly simple (and possibly dangerous) to create and update
+              Lambda functions from the CLI. The first thing you need to do is install
+              the Amazon.Lambda.Tools:
+          </p>
+          <p>
+              dotnet tool install -g Amazon.Lambda.Tools
+          </p>
+          <p>
+              Once that is done, make sure the command prompt is running in the same
+              directory as your C# code and run this command:
+          </p>
+          <p>
+              dotnet lambda deploy-function [Function Name] –-function-role [IAM Role]
+          </p>
+          <p>
+              That’s it, once the above command completes you will have a new Lambda in
+              AWS. Running the command a second time will upload a new version. Be
+              careful, this could be very dangerous in a production environment.
+          </p>
+          <button mat-icon-button><mat-icon class="text-muted">link</mat-icon></button>
+          <button mat-icon-button><mat-icon class="text-muted">share</mat-icon></button>
+          </mat-card-content>         
+        </mat-card>
+      </div>
+      <div fxFlex="100">
+        <mat-card class="p-0 m-0">
+          <mat-card-content>
+            <h2><strong><a>The current .NET SDK does not support targeting .NET Core 2.1. target .NET Core 2.0 or lower or use a vs of the .NET SDK that support NET Core 2.1</a></strong></h2>
+            <mat-divider class="mb-1"></mat-divider>
+            <p>
+              4/16/2019
+            </p>
+           <p>
+              It’s rare when StackOverflow does not have the answer to one of my
+              problems, but for some reason it didn’t seem to have the solution that
+              worked for me when I got this error. Here is a little background:
+            </p>
+            <p>
+                It had been a while since I created a .NET Core project from scratch and my
+                command line was still running 1.1 (even though I had 2.0 installed. Since
+                I wanted my new project to use the latest version supported in AWS Lambda,
+                I closed the command prompt and installed 2.1. Once it was finished I ran
+                this command:
+            </p>
+            <p>
+                dotnet --version
+            </p>
+            <p>
+                For some reason, the version still came back as 1.1. I did some searching
+                and found that if you added a globl.json file with this data, it would
+                force dotnet to use the correct version:
+            </p>
+            <p>
+                "sdk": "version": "2.1.***"
+            </p>
+
+            <p>
+                Running dotnet --version now returned the correct version and I was able to
+                create my new project using the command:
+            </p>
+            <p>
+            dotnet new lambda.SQS --name [Function Name] --profile [IAM Role] --region [AWS Region]
+            </p>
+            <p>
+                While this created the project without issue, trying to build the project
+                in Visual Studio would throw the error in the title. After more searching,
+                I finally found that removing the global.json file fixed the issue.
+                Apparently it is not needed anymore, because even without it I still get
+                back the correct version when running dotnet --version.
+            </p> 
+            <button mat-icon-button><mat-icon class="text-muted">link</mat-icon></button>
+            <button mat-icon-button><mat-icon class="text-muted">share</mat-icon></button>
+          </mat-card-content>         
+        </mat-card>
+      </div>
+    </div>
+    <div class="text-center home-section-action">
+      <button mat-raised-button mat-lg-button color="accent">LOAD MORE</button>
+    </div>
+  </div>
+</section>
