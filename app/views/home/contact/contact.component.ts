@@ -20,5 +20,7 @@ export class ContactComponent implements OnInit {
       message: ['', Validators.required]
     })
   }
-
+  comingSoon() {
+    alert('Coming soon!');
+  }
 }

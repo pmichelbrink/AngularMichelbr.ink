@@ -14,7 +14,7 @@
             <h2><strong><a>Deploying AWS Lambdas from the .NET Core Command Line</a></strong></h2>
             <mat-divider class="mb-1"></mat-divider>
             <p>
-              4/20/2019
+                5/2/2019
             </p>
             <p>
               It is incredibly simple (and possibly dangerous) to create and update
@@ -41,6 +41,47 @@
           </mat-card-content>         
         </mat-card>
       </div>
+      <div fxFlex="100">
+          <mat-card class="p-0 m-0">
+            <mat-card-content>
+              <h2><strong><a>Removing Stored Git Credentials on Windows</a></strong></h2>
+              <mat-divider class="mb-1"></mat-divider>
+              <p>
+                  4/20/2019
+              </p>
+              <p>
+                  I ran into a situation where I needed to connect to a different AWS
+                  CodeCommit repository, but making the switch was not as easy as I thought
+                  it would have been. The new repository was in the same region as my old
+                  repository, which made the git URL the same (
+                  <a href="https://git-codecommit.us-east-1.amazonaws.com/">
+                      https://git-codecommit.us-east-1.amazonaws.com
+                  </a>
+                  ).
+              </p>
+              <p>
+                  After several attempts to get Git (see what I did there?) to forget my
+                  credentials, none of the command line options worked (e.g.
+                  credential.helper manager). I also tried adding the –v flag (e.g. git pull
+                  –v) which is supposed to always prompt you for credentials. Well, none of
+                  that worked so I did some more searching and found that it was Windows that
+                  was holding onto the old repository’s credentials. By navigating t:
+              </p>
+              <p>
+                  Control Panel -&gt; Credential Manager -&gt; Windows Credentials
+              </p>
+              <p>
+                  All I had to do now was remove the git:
+                  <a href="https://git-codecommit.us-east-1.amazonaws.com/">
+                      https://git-codecommit.us-east-1.amazonaws.com
+                  </a>
+                  entry and run my pull command again.
+              </p>
+            <button mat-icon-button><mat-icon class="text-muted">link</mat-icon></button>
+            <button mat-icon-button><mat-icon class="text-muted">share</mat-icon></button>
+            </mat-card-content>         
+          </mat-card>
+        </div>
       <div fxFlex="100">
         <mat-card class="p-0 m-0">
           <mat-card-content>

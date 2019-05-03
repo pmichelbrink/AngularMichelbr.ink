@@ -37,9 +37,10 @@
         </div>
 
         <div fxFlex="100">
-          <button mat-fab color="primary" [disabled]="!contactForm.valid"><mat-icon>send</mat-icon></button>
+          <button mat-fab color="primary" [disabled]="!contactForm.valid" (click)="comingSoon()"><mat-icon>send</mat-icon></button>
         </div>
       </div>
     </form>
   </div>
 </section>
+  

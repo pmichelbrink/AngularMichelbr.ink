@@ -18,6 +18,13 @@ export class PortfolioCarouselComponent implements OnInit {
     title: 'Using AWS IoT to Send and Receive Push Notifications in .NET.',
   }, 
   {
+    photo: 'assets/images/sq-9.jpg',
+    text: `A website that allows administrators to add, update, and discharge patients. Users can track everything 
+    from appointments and medications all the way down to food intake. It also provides staff and Human Resources 
+    functionality.`,
+    title: 'Patient Tracking and Management Website built on ASP .NET Core MVC.',
+  }, 
+  {
     photo: 'assets/images/sq-13.jpg',
     text: `Create a C# WPF client that connects to server and provides the ability to work with documents.
     This client can search, add, scan, and preform numerous other operations.`,
@@ -25,7 +32,7 @@ export class PortfolioCarouselComponent implements OnInit {
   }, {
     photo: 'assets/images/sq-15.jpg',
     text: `This application can display almost any type of document. From Microsoft® Office documents to
-    AutoCAD® drawings, this viewer and display them all. In addition to viewing documents, this app can 
+    AutoCAD® drawings, this viewer and display them all. In addition to viewing and signing documents, this app can 
     insert, reorder, and delete pages.`,
     title: 'Document Viewer created with WPF and WinForms',
   }, {
@@ -35,7 +42,7 @@ export class PortfolioCarouselComponent implements OnInit {
     title: 'Workflow Client Application',
   },
   {
-    photo: 'assets/images/sq-16.jpg',
+    photo: 'assets/images/sq-17.jpg',
     text: `A WinForms app that helps users create a workflow process and adjust the routing from inception
     to completion. It provides many unique options including branching out to multiple users and holding the
     process until all users finish their work.`,
